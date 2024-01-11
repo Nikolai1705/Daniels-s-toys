@@ -185,3 +185,43 @@ body {
     color: #5cb85c;
     display: none;
   }
+
+  .thumbnail {
+    width: 190px
+  }
+
+  #shrek {
+    width: 250px;
+  }
+
+  #vecna {
+    width: 250px;
+  }
+
+  #monster {
+    width: 290px;
+  }
+
+  #buglife {
+    width: 450px;
+  }
+
+  #foot {
+    width: 250px;
+  }
+
+  #horse {
+    width: 250px;
+  }
+
+  #avatar {
+    width: 310px;
+  }
+
+  #frank {
+    width: 310px;
+  }
+
+  #kirby {
+    width: 320px;
+  }
