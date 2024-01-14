@@ -1,20 +1,22 @@
 body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
   text-align: center;
   font-family: 'Arial', Times, serif;
   color: white;
   width: 100%;
-  height: 100%;
   background-color: #313131;
   background-image: radial-gradient(rgba(255, 255, 255, 0.171) 2px, transparent 0);
   background-size: 30px 30px;
   background-position: -5px -5px;
-  margin: 0px;
 }
 
 .form-container {
-  width: 1300px;
-  height: 650px;
-  background: linear-gradient(#212121, #212121) padding-box,
+  width: 60%; /* Adjusted width of the form container */
+  background: linear-gradient(90deg, #212121ea 50%, #212121 50%) padding-box,
               linear-gradient(145deg, transparent 35%,#e81cff, #40c9ff) border-box;
   border: 2px solid transparent;
   padding: 32px 24px;
@@ -22,40 +24,21 @@ body {
   font-family: inherit;
   color: white;
   display: flex;
-  flex-direction: column;
-  gap: 20px;
+  flex-direction: row; /* Changed to row to align contact info and form horizontally */
+  justify-content: space-between;
   box-sizing: border-box;
   border-radius: 16px;
-  background-size: 200% 100%;
-  animation: gradient 5s ease infinite;
-  justify-content: center;
-  text-align: center;
 }
 
-.form {
-  max-width: 800px; /* Adjust the width as needed */
-  margin: 0 auto;
-}
-
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-.form-container button:active {
-  scale: 0.95;
+.form-container .contact-info {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .form-container .form {
+  width: 50%;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -65,7 +48,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 2px;
-  width: 800px;
+  width: 83%;
 }
 
 .form-container .form-group label {
@@ -76,37 +59,22 @@ body {
   font-size: 12px;
 }
 
-.form-container .form-group input {
-  width: 100%;
-  padding: 12px 0px;
-  border-radius: 8px;
-  color: #fff;
-  font-family: inherit;
-  background-color: transparent;
-  border: 1px solid #414141;
-}
-
+.form-container .form-group input,
 .form-container .form-group textarea {
   width: 100%;
-  padding: 12px 0px;
+  padding: 12px 16px;
   border-radius: 8px;
-  resize: none;
   color: #fff;
-  height: 170px;
-  border: 1px solid #414141;
-  background-color: transparent;
   font-family: inherit;
+  background-color: transparent;
+  border: 1px solid #414141;
 }
 
 .form-container .form-group input::placeholder {
   opacity: 0.5;
 }
 
-.form-container .form-group input:focus {
-  outline: none;
-  border-color: #e81cff;
-}
-
+.form-container .form-group input:focus,
 .form-container .form-group textarea:focus {
   outline: none;
   border-color: #e81cff;
@@ -114,13 +82,13 @@ body {
 
 .form-container .form-submit-btn {
   display: flex;
-  align-items: flex-start;
+  align-items: center; /* Adjusted alignment */
   justify-content: center;
-  align-self: flex-start;
+  align-self: center;
   font-family: inherit;
   color: #717171;
   font-weight: 600;
-  width: -moz-available;
+  width: 30%;
   background: #313131;
   border: 1px solid #414141;
   padding: 12px 16px;
@@ -129,7 +97,6 @@ body {
   margin-top: 8px;
   cursor: pointer;
   border-radius: 6px;
-  margin-top: 30px;
 }
 
 .form-container .form-submit-btn:hover {
@@ -137,10 +104,14 @@ body {
   border-color: #fff;
 }
 
-.form-group {
-  margin-bottom: 15px;
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
+/* Updated CSS for the navbar to make it fixed at the top */
 .navbar {
   width: 100%;
   height: 49.5px;
@@ -149,10 +120,12 @@ body {
   display: flex;
   justify-content: space-evenly;
   padding: 8px 0px 8px 0px;
+  position: fixed;
+  top: 0;
+  z-index: 1000; /* Ensure the navbar is on top of other elements */
 }
 
 .navbar a {
-  float: left;
   text-align: center;
   padding: 15px;
   color: white;
@@ -164,8 +137,6 @@ body {
   background-color: #000;
 }
 
-
-
 .active {
   background-color: #04AA6D;
 }
@@ -175,12 +146,4 @@ body {
     float: none;
     display: block;
   }
-}
-
-.dick {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 93vh;
-  margin: 0;
 }
