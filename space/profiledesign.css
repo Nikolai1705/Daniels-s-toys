@@ -32,8 +32,9 @@ body{
 .card-body {
     flex: 1 1 auto;
     min-height: 1px;
-    padding: 1rem;
-    height: 363px;
+    padding: 1.25rem;
+    height: 355px;
+    margin-top: 50px;
 }
 
 .gutters-sm {
@@ -92,3 +93,7 @@ body{
       display: block;
     }
   }
+
+#logo {
+    width: 54px;
+}

@@ -178,7 +178,10 @@ figure {
 }
 img {
  vertical-align:middle;
- border-style:none
+ border-style:none;
+}
+img#logo {
+ width:54px
 }
 svg {
  overflow:hidden;
@@ -4408,10 +4411,11 @@ input[type=submit].btn-block {
 }
 .card-body {
  -ms-flex:1 1 auto;
- flex:1 1 auto;
- min-height:1px;
- padding:1.25rem;
- height:363px;
+ flex: 1 1 auto;
+    min-height: 1px;
+    padding: 1.25rem;
+    height: 355px;
+    margin-top: 50px;
 }
 .card-title {
  margin-bottom:.75rem

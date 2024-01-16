@@ -12,16 +12,14 @@ body {
 }
 
 #logo {
-    width: 100px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+    width: 54px;
 }
 
 .miti {
     color: red;
     border-bottom: 3px solid black;
     text-shadow: 1px -2px 4px black;
+    text-decoration: none;
 }
 
 .buy-section {
@@ -351,3 +349,11 @@ body {
     background-color: #fff;
     border-color: #fff;
   }
+
+  #hero {
+    margin-bottom: 80px;
+  }
+
+.shkolo {
+  text-decoration: none;
+}
