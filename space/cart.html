@@ -3,38 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cart Page</title>
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="cart.css">
 </head>
 <body>
-    <h1>Your Cart</h1>
-    <ul id="cartList"></ul>
+
+    <div class="navbar">
+        <div class="nav-logo">
+          <img src="images/download.jpg" id="logo">
+        </div>
+        
+        <a class="active" href="index.html"><i class="fa fa-fw fa-home"></i> Home</a>
+        <a href="cart.html"><i class="fa fa-fw fa-search"></i> Cart</a>
+        <a href="contact.html"><i class="fa fa-fw fa-envelope"></i> Contact</a>
+        <a href="profile.html" class="split"><i class="fa fa-fw fa-user"></i> Profile</a>
+      </div>
+
+    <h1>Your Shopping Cart</h1>
+    
+    <ul id="cartItemsList"></ul>
 
     <script>
-        // Function to check if an item is in the cart
-        function isInCart(itemId) {
-            return localStorage.getItem(itemId) === 'true';
+        // Function to remove an item from the cart
+        function removeItem(itemId) {
+            localStorage.removeItem(itemId);
+            displayCartItems();
         }
 
-        // Function to populate the cart list
-        function populateCart() {
-            var cartList = document.getElementById('cartList');
+        // Function to display cart items
+        function displayCartItems() {
+            var cartItemsList = document.getElementById('cartItemsList');
+            cartItemsList.innerHTML = ''; // Clear the previous content
 
-            // Clear existing items
-            cartList.innerHTML = '';
+            // Iterate through local storage items
+            for (var i = 0; i < localStorage.length; i++) {
+                var itemId = localStorage.key(i);
+                var itemValue = localStorage.getItem(itemId);
 
-            // Loop through all items and add them to the cart if they are in the cart
-            for (let i = 1; i <= 16; i++) {
-                var itemId = 'item' + i;
-                if (isInCart(itemId)) {
+                // Check if the item is in the cart (value is 'true')
+                if (itemValue === 'true') {
                     var listItem = document.createElement('li');
                     listItem.textContent = itemId;
-                    cartList.appendChild(listItem);
+
+                    // Add a button to remove the item
+                    var removeButton = document.createElement('button');
+                    removeButton.textContent = 'Remove';
+                    // Use a function to capture the current itemId
+                    removeButton.addEventListener('click', (function(id) {
+                        return function() {
+                            removeItem(id);
+                        };
+                    })(itemId));
+
+                    listItem.appendChild(removeButton);
+                    cartItemsList.appendChild(listItem);
                 }
             }
         }
 
-        // Call the function to initially populate the cart
-        populateCart();
+        // Call the function to display cart items when the page loads
+        window.onload = displayCartItems;
     </script>
 </body>
 </html>

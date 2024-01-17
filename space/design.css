@@ -97,7 +97,7 @@ body {
     position: relative;
     width: 300px;
     height: 200px;
-    background-color: #f2f2f2;
+    background-color: #ffffff;
     border-radius: 10px;
     display: flex;
     align-items: center;
@@ -150,10 +150,12 @@ body {
   }
   
   .card__description {
-    margin: 10px 0 0;
-    font-size: 14px;
+    margin-top: 40px;
+    font-size: 50px;
     color: #777;
     line-height: 1.4;
+    display: flex;
+    justify-content: center;
   }
   
   .alert {
@@ -190,43 +192,8 @@ body {
   }
 
   .thumbnail {
-    width: 190px
-  }
-
-  #shrek {
-    width: 250px;
-  }
-
-  #vecna {
-    width: 250px;
-  }
-
-  #monster {
-    width: 290px;
-  }
-
-  #buglife {
-    width: 450px;
-  }
-
-  #foot {
-    width: 250px;
-  }
-
-  #horse {
-    width: 250px;
-  }
-
-  #avatar {
-    width: 310px;
-  }
-
-  #frank {
-    width: 310px;
-  }
-
-  #kirby {
-    width: 320px;
+    background-size: cover;
+    max-width: 175px;
   }
 
   .form-container {
@@ -356,4 +323,54 @@ body {
 
 .shkolo {
   text-decoration: none;
+}
+
+#toy1 {
+  max-width: 222px;
+}
+
+#toy2 {
+  max-width: 314px;
+}
+#toy3 {
+  max-width: 222px;
+}
+#toy4 {
+  max-width: 277px;
+}
+#toy5 {
+  max-width: 290px;
+}
+#toy6 {
+  max-width: 166px;
+}
+#toy7 {
+  max-width: 222px;
+}
+#toy8 {
+  max-width: 222px;
+}
+#toy9 {
+  max-width: 200px;
+}
+#toy10 {
+  max-width: 222px;
+}
+#toy11 {
+  max-width: 222px;
+}
+#toy12 {
+  max-width: 280px;
+}
+#toy13 {
+  max-width: 222px;
+}
+#toy14 {
+  max-width: 222px;
+}
+#toy15 {
+  max-width: 280px;
+}
+#toy16 {
+  max-width: 210px;
 }
