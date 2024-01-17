@@ -174,24 +174,32 @@
     <div class="notification" id="notificationBox">Added to cart</div>
 
     <script>
-      function showNotification(itemId) {
+      function showNotification(title, price) {
           var notificationBox = document.getElementById('notificationBox');
           notificationBox.style.display = 'block';
           setTimeout(function () {
               notificationBox.style.display = 'none';
           }, 2000);
-
-          // Add the clicked item to the cart
-          localStorage.setItem(itemId, 'true');
+  
+          // Add the clicked item title and price to the cart
+          localStorage.setItem(title, 'true');
+          
       }
-
+  
       // Add event listeners for each item
       for (let i = 1; i <= 16; i++) {
-          document.getElementById('item' + i).addEventListener('click', function () {
-              showNotification('item' + i);
+          let item = document.getElementById('item' + i);
+          let title = item.querySelector('.card__title').innerText;
+          let price = item.querySelector('.card__description').innerText;
+  
+          item.addEventListener('click', function () {
+              showNotification(title + ' ' + price);
           });
       }
   </script>
+
+
+
 
 </body>
 </html>
